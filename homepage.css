@@ -1,0 +1,327 @@
+/*=============== IMPORT DAS FONTES DE LETRAS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Signika+Negative:wght@300..700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin-top: 110px;
+}
+
+/*=============== HEADER ===============*/
+.logo img {
+    height: 75px;
+    width: auto;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 40px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFF7;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #282826;
+    font-size: 16px;
+    font-family: Signika Negative;
+}
+
+.botoes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-busca {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #5B096D;
+    background-color: #FFFFF7;
+    cursor: pointer;
+}
+
+.btn-busca i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-curriculo {
+    background-color: #5B096D;
+    color: #FFFFF7;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: Signika Negative;
+    font-size: 16px;
+}
+
+
+/*=============== SEÇÃO HERO HOMEPAGE ===============*/
+.hero {
+    height: 600px;
+    /* Imagem de Fundo */
+    background-image: url('img/background-hero.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 34px;
+}
+
+.conteudo-hero {
+    color: #FFFFF7;
+    max-width: 700px;
+    padding: 80px 100px;
+}
+
+.hero h1 {
+    font-family: Asap;
+    font-size: 58px;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-family: Signika Negative;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.botoes-hero {
+    display: flex;
+    gap: 15px;
+    width: auto;
+    height: 55px;
+}
+
+.btn-comecar {
+    font-family: Signika Negative;
+    font-size: 16px;
+    background: #FFFFF7;
+    color: #5B096D;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.btn-saibamais {
+    font-family: Signika Negative;
+    font-size: 16px;
+    background: transparent;
+    color: #FFFFF7;
+    border: 1px solid #FFFFF7;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+
+/*=============== SEÇÃO CARREIRA ===============*/
+.carreira {
+    height: 600px;
+    background-color: #FFFFF7;
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.carreira h2 {
+    color: #5B096D;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    font-family: Asap;
+}
+
+.descricao {
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 70px;
+    font-size: 16px;
+    color: #282826;
+    font-family: Signika Negative;
+}
+
+.container-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #FFFFF7;
+    width: 280px;
+    padding: 30px 20px;
+    border-radius: 15px;
+    border: 1px solid #e9e9e9;
+}
+
+.icone {
+    width: 80px;
+    height: 80px;
+    background: #e9e9e9;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icone i {
+    font-size: 30px;
+    color: #5B096D;
+}
+
+.card h3 {
+    color: #5B096D;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: Asap;
+}
+
+.card p {
+    font-size: 15px;
+    color: #282826;
+    margin-bottom: 20px;
+    font-family: Signika Negative;
+}
+
+.card button {
+    background: #282826;
+    color: #FFFFF7;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: Signika Negative;
+    font-size: 16px;
+}
+
+
+/*=============== SEÇÃO VÍDEO ===============*/
+.como-funciona {
+    height: 600px;
+    background: #5B096D;
+    color: white;
+    text-align: center;
+    padding: 45px 30px;
+}
+
+.subtitulo {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.como-funciona h2 {
+    font-family: Asap;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.video {
+    width: 55%;
+    height: 450px;
+    margin: 0 auto;
+    background: #FFFFF7;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video iframe {
+    width: 700px;
+    height: 400px;
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+    background: #FFFFF7;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.footer h3 {
+    font-family: Asap;
+    font-size: 25px;
+    color: #5B096D;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-family: Signika Negative;
+    color: #555;
+    font-size: 16px;
+}
+
+.newsletter {
+    margin: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.newsletter input {
+    font-family: Signika Negative;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    width: 250px;
+    background: #E9E9E9;
+}
+
+.newsletter button {
+    font-family: Signika Negative;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: #5B096D;
+    color: #FFFFF7;
+    cursor: pointer;
+}
+
+.redes-sociais {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.redes-sociais i {
+    font-size: 20px;
+    color: #282826;
+    cursor: pointer;
+}
+
+.footer hr {
+    margin: 40px auto;
+    width: 100%;
+    border: 0.8px solid #E9E9E9;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+}
