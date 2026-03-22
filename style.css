@@ -30,8 +30,7 @@ h4 {
 
 /* Corpo de texto (p) */
 p,
-span,
-input {
+span {
   font-family: "Signika Negative", sans-serif;
   font-size: 1.2rem; /* 16px */
   font-weight: 300;
@@ -62,6 +61,23 @@ button {
   font-family: "Signika Negative", sans-serif;
   font-weight: 300;
   font-size: 1rem;
+}
+
+label {
+  font-family: "Signika Negative", sans-serif;
+  font-size: 1rem; /* 16px */
+  font-weight: 500;
+}
+input,
+select,
+textarea {
+  font-family: "Signika Negative", sans-serif;
+  padding: 0.8rem 1.2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  color: gray;
 }
 
 body {
@@ -333,15 +349,14 @@ body {
   background-size: cover;
   display: flex;
   justify-content: center;
-
 }
 .cta-box {
-  background-color: #282826; 
+  background-color: #282826;
   padding: 50px 3.75rem;
   border-radius: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   gap: 30px;
   margin: 0 auto;
 }
@@ -352,7 +367,7 @@ body {
 }
 
 .cta-texto h3 {
-  color: #fffff7; 
+  color: #fffff7;
   margin-bottom: 10px;
   font-size: 2rem;
 }
@@ -365,7 +380,7 @@ body {
 
 .cta-botoes {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   gap: 15px;
 }
@@ -384,7 +399,6 @@ body {
 .btn-branco:hover {
   background-color: #e9e9e9;
 }
-
 
 /*=============== FOOTER ===============*/
 .footer {
@@ -443,4 +457,129 @@ body {
 .footer hr {
   border: 0.5px solid #e9e9e9;
   margin-bottom: 2rem;
+}
+
+/*=============== PÁGINA DE CADASTRO ===============*/
+/* BANNER INTRO PÁGINA */
+.banner-cadastro {
+  background-color: #5b096d; /* Roxo WConnect */
+  color: #fffff7;
+  text-align: center;
+  padding: 5rem 0;
+  margin-top: 110px;
+  width: 100%;
+}
+
+.conteudo-banner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.titulo-banner {
+  margin: 0.4rem 0 3rem;
+}
+
+/* DIV CADASTRO + FORM */
+.secao-cadastro-dupla {
+  padding: 5rem 5%;
+  background-color: #fffff7;
+}
+
+.container-flex {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 4rem;
+  align-items: flex-start; /* Importante para o sticky funcionar */
+}
+
+/* COLUNA FIXA */
+.coluna-info {
+  flex: 1;
+  position: sticky;
+  top: 150px; /* Distância do topo da tela ao rolar (ajuste conforme seu header) */
+}
+
+.subtitulo-roxo {
+  color: #5b096d;
+  font-weight: 700;
+}
+
+.titulo-grande {
+  color: #282826;
+}
+
+.texto-apoio {
+  color: #666;
+}
+
+.lista-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item-contato {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #5b096d;
+  font-weight: 600;
+}
+
+/* COLUNA DO FORMULÁRIO */
+.coluna-form {
+  flex: 1.2;
+}
+
+.card-roxo {
+  background-color: #5b096d; /* Tom lilás suave */
+  padding: 3rem;
+  border-radius: 25px;
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.grupo-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.grupo-input label,
+.label-estilizada {
+  color: #fffff7;
+  margin: 0.2rem;
+}
+
+.grupo-input input,
+.grupo-input select,
+.grupo-input textarea {
+  background: white;
+}
+
+.btn-enviar {
+  width: 100%;
+  margin-top: 2rem;
+  background-color: transparent;
+  color: white;
+  border: 1px solid;
+  cursor: pointer;
+  color: #fffff7;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.btn-enviar:hover {
+  background-color: #282826;
+  border: none;
 }
