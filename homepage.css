@@ -1,327 +1,446 @@
 /*=============== IMPORT DAS FONTES DE LETRAS ===============*/
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Signika+Negative:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Signika+Negative:wght@300..700&display=swap");
 
-body {
-    margin: 0;
-    padding: 0;
+/* Padrões */
+h1 {
+  font-family: "Asap", sans-serif;
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700;
 }
 
-main {
-    margin-top: 110px;
+h2 {
+  font-family: "Asap", sans-serif;
+  font-size: 2rem; /* 32px */
+  font-weight: 600;
+}
+
+h3 {
+  font-family: "Asap", sans-serif;
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+}
+
+h4 {
+  font-family: "Asap", sans-serif;
+  font-size: 1.1rem; /* 20px */
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Corpo de texto (p) */
+p,
+span,
+input {
+  font-family: "Signika Negative", sans-serif;
+  font-size: 1.2rem; /* 16px */
+  font-weight: 300;
+}
+
+a {
+  font-family: "Signika Negative", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+button {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 4%;
+}
+
+/* Estilo diferenciado para o Simbolo de Copyright */
+.simbolo {
+  color: #5b096d;
+  font-weight: 500;
+}
+
+/* Legendas e Links */
+.copyright,
+.subtitulo,
+.grupo-vagas li a {
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fffff7;
 }
 
 /*=============== HEADER ===============*/
 .logo img {
-    height: 75px;
-    width: auto;
+  height: 75px;
+  width: auto;
 }
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 15px 40px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #FFFFF7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5% 5%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fffff7;
 }
 
 .menu {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 2rem;
+}
+.menu > ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu a {
+  text-decoration: none;
+  color: #282826;
 }
 
-.menu a {
-    text-decoration: none;
-    color: #282826;
-    font-size: 16px;
-    font-family: Signika Negative;
+.menu a:hover {
+  text-decoration: none;
+  color: #5b096d;
+}
+
+/* Faz o item pai ser referência */
+.item-vagas {
+  position: relative;
+}
+
+.grupo-vagas {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0.8rem;
+  background-color: #fffff7;
+  border-radius: 5px;
+}
+
+/* Mostra quando interagir */
+.item-vagas:hover .grupo-vagas,
+.item-vagas:focus-within .grupo-vagas {
+  display: block;
+}
+
+/* Mantém aberto */
+.item-vagas:hover .grupo-vagas {
+  display: block;
 }
 
 .botoes {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .btn-busca {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid #5B096D;
-    background-color: #FFFFF7;
-    cursor: pointer;
-}
-
-.btn-busca i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #5b096d;
+  background-color: #fffff7;
+  cursor: pointer;
 }
 
 .btn-curriculo {
-    background-color: #5B096D;
-    color: #FFFFF7;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: Signika Negative;
-    font-size: 16px;
+  background-color: #5b096d;
+  color: #fffff7;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
 }
-
 
 /*=============== SEÇÃO HERO HOMEPAGE ===============*/
 .hero {
-    height: 600px;
-    /* Imagem de Fundo */
-    background-image: url('img/background-hero.png');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    padding: 34px;
+  min-height: 80vh; /* Altura baseada na tela do usuário */
+  background-image: url("img/background-hero.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
 }
 
 .conteudo-hero {
-    color: #FFFFF7;
-    max-width: 700px;
-    padding: 80px 100px;
+  color: #fffff7;
+  max-width: 700px;
 }
 
 .hero h1 {
-    font-family: Asap;
-    font-size: 58px;
-    margin-bottom: 25px;
+  margin-bottom: 1.5rem;
 }
 
 .hero p {
-    font-family: Signika Negative;
-    font-size: 18px;
-    margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .botoes-hero {
-    display: flex;
-    gap: 15px;
-    width: auto;
-    height: 55px;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-comecar,
+.btn-saibamais {
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
 .btn-comecar {
-    font-family: Signika Negative;
-    font-size: 16px;
-    background: #FFFFF7;
-    color: #5B096D;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
+  background: #fffff7;
+  color: #5b096d;
+  border: none;
+}
+.btn-comecar:hover {
+  background: #282826;
+  color: #fffff7;
+  border: none;
 }
 
 .btn-saibamais {
-    font-family: Signika Negative;
-    font-size: 16px;
-    background: transparent;
-    color: #FFFFF7;
-    border: 1px solid #FFFFF7;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
+  background: transparent;
+  color: #fffff7;
+  border: 1px solid #fffff7;
 }
 
+.btn-saibamais:hover {
+  background-color: #282826;
+  color: #fffff7;
+  border: none;
+}
 
 /*=============== SEÇÃO CARREIRA ===============*/
 .carreira {
-    height: 600px;
-    background-color: #FFFFF7;
-    padding: 100px 40px;
-    text-align: center;
+  padding: 5rem 5%; /* Padronização de respiro vertical e horizontal */
+  text-align: center;
 }
 
 .carreira h2 {
-    color: #5B096D;
-    font-size: 30px;
-    margin-top: 50px;
-    margin-bottom: 15px;
-    font-family: Asap;
+  color: #5b096d;
+  margin-bottom: 1rem;
 }
 
 .descricao {
-    max-width: 600px;
-    margin: auto;
-    margin-bottom: 70px;
-    font-size: 16px;
-    color: #282826;
-    font-family: Signika Negative;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  color: #282826;
 }
 
 .container-cards {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .card {
-    background: #FFFFF7;
-    width: 280px;
-    padding: 30px 20px;
-    border-radius: 15px;
-    border: 1px solid #e9e9e9;
+  background: #fff;
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  border: 1px solid #e9e9e9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03); /* Suave profundidade */
 }
 
 .icone {
-    width: 80px;
-    height: 80px;
-    background: #e9e9e9;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: #e9e9e9;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icone i {
-    font-size: 30px;
-    color: #5B096D;
+  font-size: 2rem;
+  color: #5b096d;
 }
 
 .card h3 {
-    color: #5B096D;
-    font-size: 18px;
-    margin-bottom: 10px;
-    font-family: Asap;
+  color: #5b096d;
+  margin-bottom: 0.8rem;
 }
 
 .card p {
-    font-size: 15px;
-    color: #282826;
-    margin-bottom: 20px;
-    font-family: Signika Negative;
+  color: #282826;
+  margin-bottom: 1.5rem;
 }
 
 .card button {
-    background: #282826;
-    color: #FFFFF7;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-family: Signika Negative;
-    font-size: 16px;
+  background: #282826;
+  color: #fffff7;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
+.card button:hover {
+  background: #5b096d;
+}
 
 /*=============== SEÇÃO VÍDEO ===============*/
 .como-funciona {
-    height: 600px;
-    background: #5B096D;
-    color: white;
-    text-align: center;
-    padding: 45px 30px;
-}
-
-.subtitulo {
-    font-size: 12px;
-    letter-spacing: 2px;
+  background: #5b096d;
+  color: white;
+  text-align: center;
+  padding: 5rem 5%;
 }
 
 .como-funciona h2 {
-    font-family: Asap;
-    font-size: 30px;
-    margin-bottom: 40px;
+  margin: 0.4rem 0 3rem;
 }
 
 .video {
-    width: 55%;
-    height: 450px;
-    margin: 0 auto;
-    background: #FFFFF7;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9; /*  proporção automática */
+  background: #fffff7;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .video iframe {
-    width: 700px;
-    height: 400px;
+  width: 100%;
+  height: 100%;
 }
+
+/*=============== SEÇÃO CTA ESTILO CARD ===============*/
+
+.cta-container {
+  padding: 5rem 0;
+  background-image: url("img/cta.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+
+}
+.cta-box {
+  background-color: #282826; 
+  padding: 50px 3.75rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.cta-texto {
+  max-width: 700px;
+  text-align: left;
+}
+
+.cta-texto h3 {
+  color: #fffff7; 
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.cta-texto p {
+  color: #fffff7;
+  font-weight: 300;
+  margin: 0;
+}
+
+.cta-botoes {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 15px;
+}
+.btn-branco {
+  background-color: #fffff7;
+  color: #5b096d;
+  text-decoration: none;
+  padding: 12px 35px;
+  border-radius: 25px;
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.btn-branco:hover {
+  background-color: #e9e9e9;
+}
+
 
 /*=============== FOOTER ===============*/
 .footer {
-    background: #FFFFF7;
-    text-align: center;
-    padding: 60px 20px;
+  padding: 4rem 5% 0;
+  text-align: center;
 }
 
 .footer h3 {
-    font-family: Asap;
-    font-size: 25px;
-    color: #5B096D;
-    margin-bottom: 10px;
-}
-
-.footer p {
-    font-family: Signika Negative;
-    color: #555;
-    font-size: 16px;
+  color: #5b096d;
 }
 
 .newsletter {
-    margin: 35px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .newsletter input {
-    font-family: Signika Negative;
-    font-size: 16px;
-    padding: 12px 20px;
-    border-radius: 25px;
-    border: none;
-    width: 250px;
-    background: #E9E9E9;
+  padding: 0.8rem 1.2rem;
+  border-radius: 25px;
+  border: none;
+  width: 300px;
+  max-width: 70%;
+  background: #e9e9e9;
 }
 
 .newsletter button {
-    font-family: Signika Negative;
-    font-size: 16px;
-    padding: 12px 20px;
-    border-radius: 25px;
-    border: none;
-    background-color: #5B096D;
-    color: #FFFFF7;
-    cursor: pointer;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  border: none;
+  background-color: #5b096d;
+  color: #fffff7;
+  cursor: pointer;
 }
 
 .redes-sociais {
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1.4rem;
 }
 
-.redes-sociais i {
-    font-size: 20px;
-    color: #282826;
-    cursor: pointer;
+.redes-sociais > i {
+  color: #282826;
+  background-color: #5b096d2f;
+  padding: 0.4rem;
+  border-radius: 5px;
+}
+.redes-sociais > i:hover {
+  color: #9817b5c8;
+  background-color: #282826;
 }
 
 .footer hr {
-    margin: 40px auto;
-    width: 100%;
-    border: 0.8px solid #E9E9E9;
-}
-
-.copyright {
-    display: flex;
-    justify-content: center;
-    font-size: 12px;
+  border: 0.5px solid #e9e9e9;
+  margin-bottom: 2rem;
 }
