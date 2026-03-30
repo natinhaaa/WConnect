@@ -48,7 +48,7 @@ button {
   letter-spacing: 4%;
 }
 
-/* Estilo diferenciado para o Simbolo de Copyright */
+/* Estilo para o Simbolo de Copyright */
 .simbolo {
   color: #5b096d;
   font-weight: 500;
@@ -119,6 +119,7 @@ body {
 .menu a {
   text-decoration: none;
   color: #282826;
+  font-weight: 400;
 }
 
 .menu a:hover {
@@ -170,19 +171,31 @@ body {
 }
 
 .btn-curriculo {
-  background-color: #5b096d;
-  color: #fffff7;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
+    background-color: #5b096d;
+    color: #fffff7 !important; 
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none; 
+    display: inline-block; 
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-curriculo:hover {
+    background-color: #7a1291; 
+    color: #ffffff !important;
+    transform: translateY(-2px); 
+    box-shadow: 0 5px 15px rgba(91, 9, 109, 0.4);
+    text-decoration: none; 
 }
 
 /*=============== SEÇÃO HERO HOMEPAGE ===============*/
 .hero {
-  min-height: 80vh; /* Altura baseada na tela do usuário */
-  background-image: url("img/background-hero.png");
+  min-height: 100vh; /* Altura baseada na tela do usuário */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("img/banner_mulheres_tech_grupo_2.png");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -240,7 +253,7 @@ body {
 
 /*=============== SEÇÃO CARREIRA ===============*/
 .carreira {
-  padding: 5rem 5%; /* Padronização de respiro vertical e horizontal */
+  padding: 5rem 5%;
   text-align: center;
 }
 
@@ -270,7 +283,7 @@ body {
   padding: 3rem 2rem;
   border-radius: 15px;
   border: 1px solid #e9e9e9;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03); /* Suave profundidade */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03); /* Suave sombra */
 }
 
 .icone {
@@ -340,7 +353,6 @@ body {
 }
 
 /*=============== SEÇÃO CTA ESTILO CARD ===============*/
-
 .cta-container {
   padding: 5rem 0;
   background-image: url("img/cta.png");
@@ -460,6 +472,7 @@ body {
 }
 
 /*=============== PÁGINA DE CADASTRO ===============*/
+
 /* BANNER INTRO PÁGINA */
 .banner-cadastro {
   background-color: #5b096d; /* Roxo WConnect */
@@ -497,7 +510,7 @@ body {
 .coluna-info {
   flex: 1;
   position: sticky;
-  top: 150px; /* Distância do topo da tela ao rolar (ajuste conforme seu header) */
+  top: 150px; /* Distância do topo da tela ao rolar*/
 }
 
 .subtitulo-roxo {
@@ -533,7 +546,7 @@ body {
 }
 
 .card-roxo {
-  background-color: #5b096d; /* Tom lilás suave */
+  background-color: #5b096d;
   padding: 3rem;
   border-radius: 25px;
 }
