@@ -5,20 +5,23 @@
 /* Padrões */
 h1 {
   font-family: "Asap", sans-serif;
-  font-size: 2.5rem; /* 40px */
+  font-size: 3.5rem; /* 40px */
   font-weight: 700;
+  text-shadow: 2px 2px 2px gray;
 }
 
 h2 {
   font-family: "Asap", sans-serif;
   font-size: 2rem; /* 32px */
   font-weight: 600;
+  text-shadow: 2px 2px 2px gray;
 }
 
 h3 {
   font-family: "Asap", sans-serif;
   font-size: 1.25rem; /* 20px */
-  font-weight: 600;
+  font-weight: 850;
+  text-shadow: 2px 2px 2px gray;
 }
 
 h4 {
@@ -26,13 +29,14 @@ h4 {
   font-size: 1.1rem; /* 20px */
   font-weight: 600;
   margin: 0;
+  text-shadow: 2px 2px 2px gray;
 }
 
 /* Corpo de texto (p) */
 p,
 span {
   font-family: "Signika Negative", sans-serif;
-  font-size: 1.2rem; /* 16px */
+  font-size: 1.3rem; /* 16px */
   font-weight: 300;
 }
 
@@ -78,7 +82,9 @@ textarea {
   border: none;
   border-radius: 12px;
   color: gray;
+  box-shadow: 0px 0px 8px rgba(94, 119, 247, 0.5);
 }
+
 
 body {
   margin: 0;
@@ -194,13 +200,19 @@ body {
 
 /*=============== SEÇÃO HERO HOMEPAGE ===============*/
 .hero {
-  min-height: 100vh; /* Altura baseada na tela do usuário */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("img/banner_mulheres_tech_grupo_2.png");
+  min-height: 110vh;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.25)
+  ), url("img/banner_mulheres_tech_roxo_1.png");
+
   background-size: cover;
-  background-position: center;
+  background-position: top center;
+  background-attachment: fixed;
+
   display: flex;
   align-items: center;
-  padding: 0 5%;
+  padding: 0 6%;
 }
 
 .conteudo-hero {
@@ -547,8 +559,10 @@ body {
 
 .card-roxo {
   background-color: #5b096d;
+  box-shadow: black;
   padding: 3rem;
   border-radius: 25px;
+  box-shadow: 0px 0px 10px rgba(94, 119, 247, 0.5);
 }
 
 .grid-form {
@@ -590,6 +604,7 @@ body {
   padding: 0.7rem 1.5rem;
   border-radius: 25px;
   cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(94, 119, 247, 0.5);
 }
 
 .btn-enviar:hover {
