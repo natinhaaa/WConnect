@@ -1021,3 +1021,160 @@ body {
   align-items: center;
   gap: 0.4rem;
 }
+
+/*=============== PÁGINA DE TALENTOS / CURRÍCULOS ===============*/
+
+.barra-busca-topo {
+  background-color: #fff;
+  border: 1px solid #e9e9e9;
+  border-radius: 15px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.barra-busca-topo .input-icone {
+  flex: 1;
+  min-width: 200px;
+}
+
+.barra-busca-topo input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 1rem 0.65rem 2.4rem;
+  border: 1px solid #e9e9e9;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #282826;
+  background-color: #fffff7;
+  box-shadow: none;
+}
+
+.barra-busca-topo input:focus {
+  outline: none;
+  border-color: #5b096d;
+}
+
+.card-profissional {
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: box-shadow 0.3s, transform 0.3s;
+  height: 100%;
+}
+
+.card-profissional:hover {
+  box-shadow: 0 8px 24px rgba(91, 9, 109, 0.12);
+  transform: translateY(-3px);
+}
+
+.card-prof-topo {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.avatar-prof {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  background: linear-gradient(135deg, #f5e6f8, #dbb8e8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5b096d;
+  font-size: 1.5rem;
+}
+
+.info-prof h4 {
+  font-size: 1rem;
+  color: #282826;
+  margin: 0 0 0.15rem;
+  text-shadow: none;
+  font-weight: 700;
+}
+
+.cargo-prof {
+  font-size: 0.85rem;
+  color: #5b096d;
+  font-weight: 500;
+}
+
+.card-prof-detalhes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+}
+
+.card-prof-detalhes span {
+  font-size: 0.82rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 400;
+}
+
+.card-prof-detalhes i {
+  color: #5b096d;
+  font-size: 0.85rem;
+}
+
+.card-prof-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.badge-disp {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+}
+
+.disp-sim {
+  background-color: #e1f5ee;
+  color: #0f6e56;
+}
+
+.disp-nao {
+  background-color: #faeeda;
+  color: #854f0b;
+}
+
+.sem-resultados {
+  display: none;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #888;
+}
+
+.sem-resultados i {
+  font-size: 3rem;
+  color: #dbb8e8;
+  margin-bottom: 1rem;
+}
+
+.sem-resultados h5 {
+  color: #5b096d;
+  font-size: 1.1rem;
+  font-family: "Asap", sans-serif;
+  text-shadow: none;
+}
+#filtro-nome {
+  padding-left: 2.2rem;
+}
