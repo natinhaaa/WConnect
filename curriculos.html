@@ -1,10 +1,10 @@
-<!-- O intuito dessa página é diferenciar o código trazendo o FrameWork Boostrap e JS -->
+<!-- CURRICULO (TALENTOS) -->
+<!-- O intuito dessa página é diferenciar o código trazendo o FrameWork Bootstrap e JS -->
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Gabrielly N Rodrigues e Natália V Cerqueira">
         <meta name="keywords" content="currículos, talentos femininos, tecnologia">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -15,21 +15,16 @@
 
         <header class="header">
             <div class="logo">
-                <img src="/img/logo.png" alt="Logo">
+                <img src="img/logo.png" alt="Logo">
             </div>
             <nav class="menu">
                 <ul>
                     <li><a href="homepage.html">Home</a></li>
                     <li><a href="#">Sobre</a></li>
                     <li class="item-vagas">
-                        <a href="#">Vagas ▼</a>
-                        <ul class="grupo-vagas">
-                            <li><a href="#">Estágios</a></li>
-                            <li><a href="#">Freelancer</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="curriculos.html" style="color:#5b096d; font-weight:600;">Talentos</a></li>
-                    <li><a href="#">Mural</a></li>
+                        <a href="vagas.html">Vagas</a>
+                    </li> 
+                    <li><a href="curriculos.html">Talentos</a></li>
                     <li><a href="#">Contato</a></li>
                 </ul>
             </nav>
@@ -40,9 +35,9 @@
         </header>
 
         <main>
-            <section class="banner-cadastro">
+            <section class="banner-talentos">
                 <div class="conteudo-banner">
-                    <h4 style="font-size: 1.1rem;">EXPLORE</h4>
+                    <h4>EXPLORE</h4>
                     <h1 class="titulo-banner">Talentos</h1>
                 </div>
             </section>
@@ -130,8 +125,9 @@
                         <div class="barra-busca-topo">
                             <div class="input-icone">
                                 <i class="bi bi-search"></i>
-                                <input type="text" id="busca-rapida" placeholder="Busca rápida por nome, área ou habilidade..." oninput="buscaRapida()">
+                                <input type="text" id="busca-rapida" placeholder="Busca rápida por nome, área ou habilidade...">
                             </div>
+                            <button class="btn-filtrar" style="width:auto; padding: 0.65rem 1.4rem;" onclick="buscaRapida()">Buscar</button>
                         </div>
 
                         <div class="vagas-header">
@@ -566,96 +562,104 @@
                 <i class="bi bi-linkedin"></i>
                 <i class="bi bi-youtube"></i>
             </div>
-            <hr>
-            <p class="copyright">Copyright <span class="simbolo">©</span> 2026 Gabrielly Rodrigues & Natália Cerqueira</p>
         </footer>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
         <script>
-            const todos = Array.from(document.querySelectorAll('#grid-profissionais .card-col'));
+            // Lista de todos os cards de profissionais
+            var cards = Array.from(document.querySelectorAll('#grid-profissionais .card-col'));
 
-            function filtrar() {
-                const termo  = document.getElementById('filtro-nome').value.toLowerCase().trim();
-                const area   = document.getElementById('filtro-area').value;
-                const nivel  = document.getElementById('filtro-nivel').value;
-                const estado = document.getElementById('filtro-estado').value;
-                const soDisp = document.getElementById('check-disponivel').checked;
-                const mods   = Array.from(document.querySelectorAll('.check-modalidade:checked')).map(c => c.value);
+            // Atualiza o contador e visibilidade da mensagem "sem resultados"
+            function atualizarContador() {
+                var visiveis = cards.filter(function(card) {
+                    return card.style.display !== 'none';
+                }).length;
 
-                let visiveis = 0;
-
-                todos.forEach(card => {
-                    const buscaOk  = !termo  || card.dataset.nome.toLowerCase().includes(termo)
-                                             || card.dataset.cargo.toLowerCase().includes(termo)
-                                             || card.dataset.skills.includes(termo);
-                    const areaOk   = !area   || card.dataset.area   === area;
-                    const nivelOk  = !nivel  || card.dataset.nivel  === nivel;
-                    const estadoOk = !estado || card.dataset.estado === estado;
-                    const dispOk   = !soDisp || card.dataset.disponivel === 'Sim';
-                    const modOk    = mods.length === 0 || mods.includes(card.dataset.modalidade);
-
-                    const visivel = buscaOk && areaOk && nivelOk && estadoOk && dispOk && modOk;
-                    card.style.display = visivel ? '' : 'none';
-                    if (visivel) visiveis++;
-                });
-
-                document.getElementById('label-total').innerHTML =
-                    `<strong>${visiveis}</strong> profissiona${visiveis === 1 ? 'l encontrada' : 'is encontradas'}`;
+                var plural = visiveis === 1 ? 'l encontrada' : 'is encontradas';
+                document.getElementById('label-total').innerHTML = '<strong>' + visiveis + '</strong> profissiona' + plural;
 
                 document.getElementById('sem-resultados').style.display = visiveis === 0 ? 'block' : 'none';
-                document.getElementById('paginacao').style.display       = visiveis === 0 ? 'none'  : 'flex';
+                document.getElementById('paginacao').style.display      = visiveis === 0 ? 'none'  : 'flex';
             }
 
+            // Aplica todos os filtros ao clicar no botão "Aplicar Filtros"
+            function aplicarFiltros() {
+                var nome   = document.getElementById('filtro-nome').value.toLowerCase().trim();
+                var area   = document.getElementById('filtro-area').value;
+                var nivel  = document.getElementById('filtro-nivel').value;
+                var estado = document.getElementById('filtro-estado').value;
+                var soDisp = document.getElementById('check-disponivel').checked;
+
+                var modalidadesSelecionadas = [];
+                document.querySelectorAll('.check-modalidade:checked').forEach(function(checkbox) {
+                    modalidadesSelecionadas.push(checkbox.value);
+                });
+
+                cards.forEach(function(card) {
+                    var buscaOk  = !nome   || card.dataset.nome.toLowerCase().includes(nome)
+                                           || card.dataset.cargo.toLowerCase().includes(nome)
+                                           || card.dataset.skills.includes(nome);
+                    var areaOk   = !area   || card.dataset.area   === area;
+                    var nivelOk  = !nivel  || card.dataset.nivel  === nivel;
+                    var estadoOk = !estado || card.dataset.estado === estado;
+                    var dispOk   = !soDisp || card.dataset.disponivel === 'Sim';
+                    var modOk    = modalidadesSelecionadas.length === 0 || modalidadesSelecionadas.includes(card.dataset.modalidade);
+
+                    card.style.display = (buscaOk && areaOk && nivelOk && estadoOk && dispOk && modOk) ? '' : 'none';
+                });
+
+                atualizarContador();
+            }
+
+            // Busca rápida pelo campo do topo — copia o valor para o filtro lateral e aplica
             function buscaRapida() {
                 document.getElementById('filtro-nome').value = document.getElementById('busca-rapida').value;
-                filtrar();
+                aplicarFiltros();
             }
 
-            function aplicarFiltros() {
-                document.getElementById('busca-rapida').value = document.getElementById('filtro-nome').value;
-                filtrar();
-            }
-
+            // Limpa todos os filtros e mostra todos os cards
             function limparFiltros() {
-                ['filtro-nome', 'busca-rapida', 'filtro-area', 'filtro-nivel', 'filtro-estado'].forEach(id => {
-                    document.getElementById(id).value = '';
-                });
+                document.getElementById('filtro-nome').value  = '';
+                document.getElementById('busca-rapida').value = '';
+                document.getElementById('filtro-area').value  = '';
+                document.getElementById('filtro-nivel').value = '';
+                document.getElementById('filtro-estado').value = '';
                 document.getElementById('check-disponivel').checked = false;
-                document.querySelectorAll('.check-modalidade').forEach(c => c.checked = false);
-                todos.forEach(c => c.style.display = '');
-                document.getElementById('label-total').innerHTML = `<strong>${todos.length}</strong> profissionais encontradas`;
-                document.getElementById('sem-resultados').style.display = 'none';
-                document.getElementById('paginacao').style.display      = 'flex';
+                document.querySelectorAll('.check-modalidade').forEach(function(c) { c.checked = false; });
+
+                cards.forEach(function(c) { c.style.display = ''; });
+                atualizarContador();
             }
 
+            // Ordena os cards no grid conforme o critério escolhido
             function ordenarCards() {
-                const criterio = document.getElementById('ordenar').value;
-                const ordem = { 'Estagiária': 1, 'Júnior': 2, 'Pleno': 3, 'Sênior': 4, 'Especialista': 5 };
-                const grid  = document.getElementById('grid-profissionais');
+                var criterio = document.getElementById('ordenar').value;
+                var ordemNivel = { 'Estagiária': 1, 'Júnior': 2, 'Pleno': 3, 'Sênior': 4, 'Especialista': 5 };
+                var grid = document.getElementById('grid-profissionais');
 
-                todos.sort((a, b) => {
-                    if (criterio === 'nome')      return a.dataset.nome.localeCompare(b.dataset.nome, 'pt-BR');
-                    if (criterio === 'nivel')     return (ordem[a.dataset.nivel] || 0) - (ordem[b.dataset.nivel] || 0);
-                    if (criterio === 'disponivel') return (a.dataset.disponivel === 'Sim' ? 0 : 1) - (b.dataset.disponivel === 'Sim' ? 0 : 1);
+                cards.sort(function(a, b) {
+                    if (criterio === 'nome') {
+                        return a.dataset.nome.localeCompare(b.dataset.nome, 'pt-BR');
+                    }
+                    if (criterio === 'nivel') {
+                        return (ordemNivel[a.dataset.nivel] || 0) - (ordemNivel[b.dataset.nivel] || 0);
+                    }
+                    if (criterio === 'disponivel') {
+                        return (a.dataset.disponivel === 'Sim' ? 0 : 1) - (b.dataset.disponivel === 'Sim' ? 0 : 1);
+                    }
                 });
 
-                todos.forEach(c => grid.appendChild(c));
+                cards.forEach(function(c) { grid.appendChild(c); });
             }
 
-            document.querySelectorAll('.pag-btn').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    document.querySelectorAll('.pag-btn').forEach(b => b.classList.remove('pag-ativo'));
-                    if (!this.classList.contains('pag-proximo')) this.classList.add('pag-ativo');
+            // Botões de páginas — marcam o ativo visualmente
+            document.querySelectorAll('.pag-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.pag-btn').forEach(function(b) { b.classList.remove('pag-ativo'); });
+                    if (!this.classList.contains('pag-proximo')) {
+                        this.classList.add('pag-ativo');
+                    }
                 });
             });
-
-            ['filtro-area', 'filtro-nivel', 'filtro-estado'].forEach(id => {
-                document.getElementById(id).addEventListener('change', filtrar);
-            });
-            document.getElementById('filtro-nome').addEventListener('input', aplicarFiltros);
-            document.getElementById('check-disponivel').addEventListener('change', filtrar);
-            document.querySelectorAll('.check-modalidade').forEach(c => c.addEventListener('change', filtrar));
         </script>
 
     </body>

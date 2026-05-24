@@ -1,192 +1,260 @@
+<!-- CADASTRO -->
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author"
-            content="Gabrielly N Rodrigues e Natália V Cerqueira">
-        <meta name="keywords"
-            content="carreiras, área de tecnologia, talentos femininos">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-        <title>Cadastro - WConnect</title>
-    </head>
-    <body>
-        <header class="header">
-            <div class="logo">
-                <img src="/img/logo.png" alt="Logo">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="carreiras, área de tecnologia, talentos femininos">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <title>Cadastro - WConnect</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li class="item-vagas">
+                    <a href="vagas.html">Vagas</a>
+                </li>
+                <li><a href="curriculos.html">Talentos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="botoes">
+            <button class="btn-busca">
+                <i class="bi bi-search"></i>
+            </button>
+            <a href="cadastro.html" class="btn-curriculo">Enviar Currículo</a>
+        </div>
+    </header>
+
+    <main class="container-cadastro">
+        <section class="banner-cadastro">
+            <div class="conteudo-banner">
+                <h4>PÁGINA</h4>
+                <h1 class="titulo-banner">Cadastro</h1>
             </div>
+        </section>
 
-            <nav class="menu">
-                <ul>
-                    <li><a href="homepage.html">Home</a></li>
-                    <li><a href="#">Sobre</a></li>
+        <section class="secao-cadastro-dupla">
+            <div class="container-flex">
 
-                    <li class="item-vagas">
-                        <a href="#">Vagas ▼</a> <ul class="grupo-vagas">
-                            <li><a href="#">Estágios</a></li>
-                            <li><a href="#">Freelancer</a></li>
-                        </ul>
-                    </li>
+                <div class="coluna-info">
+                    <h3 class="subtitulo-roxo">FAÇA PARTE DA REDE</h3>
+                    <h2 class="titulo-grande">Crie seu perfil e impulsione sua carreira!</h2>
+                    <p class="texto-apoio">Preencha os dados ao lado para que possamos conectar seu talento às melhores
+                        empresas de tecnologia do mercado.</p>
 
-                    <li><a href="#">Mural</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-            </nav>
-
-            <div class="botoes">
-                <button class="btn-busca">
-                    <i class="bi bi-search"></i>
-                </button>
-                <button class="btn-curriculo">Enviar Currículo</button>
-            </div>
-        </header>
-
-        <main class="container-cadastro">
-            <section class="banner-cadastro">
-                <div class="conteudo-banner">
-                    <h4>PÁGINA</h4>
-                    <h1 class="titulo-banner">Cadastro</h1>
-                </div>
-            </section>
-
-            <section class="secao-cadastro-dupla">
-                <div class="container-flex">
-
-                    <div class="coluna-info">
-                        <h3 class="subtitulo-roxo">FAÇA PARTE DA REDE</h3>
-                        <h2 class="titulo-grande">Crie seu perfil e impulsione
-                            sua carreira!</h2>
-                        <p class="texto-apoio">Preencha os dados ao lado para
-                            que possamos conectar seu talento às melhores
-                            empresas de tecnologia do mercado.</p>
-
-                        <div class="lista-contato">
-                            <div class="item-contato">
-                                <i class="bi bi-envelope"></i>
-                                <span>suporte@wconnect.com</span>
-                            </div>
-                            <div class="item-contato">
-                                <i class="bi bi-question-circle"></i>
-                                <span>Dúvidas sobre o perfil?</span>
-                            </div>
+                    <div class="lista-contato">
+                        <div class="item-contato">
+                            <i class="bi bi-envelope"></i>
+                            <span>suporte@wconnect.com</span>
+                        </div>
+                        <div class="item-contato">
+                            <i class="bi bi-question-circle"></i>
+                            <span>Dúvidas sobre o perfil?</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="coluna-form">
-                        <form action="#" method="POST" class="card-roxo"
-                            enctype="multipart/form-data">
+                <div class="coluna-form">
+                    <form id="form-cadastro" action="#" method="POST" class="card-roxo" enctype="multipart/form-data"
+                        onsubmit="return validarFormulario(event)">
 
-                            <div class="grid-form">
-                                <div class="grupo-input">
-                                    <label for="nome">Nome Completo</label>
-                                    <input type="text" id="nome"
-                                        placeholder="Digite seu nome">
-                                </div>
-                                <div class="grupo-input">
-                                    <label for="email">E-mail</label>
-                                    <input type="email" id="email"
-                                        placeholder="Digite seu e-mail">
-                                </div>
-                                <div class="grupo-input">
-                                    <label for="nascimento">Data de
-                                        Nascimento</label>
-                                    <input type="date" id="nascimento">
-                                </div>
-                                <div class="grupo-input">
-                                    <label for="nivel">Nível de
-                                        Experiência</label>
-                                    <select id="nivel">
-                                        <option>Estagiária</option>
-                                        <option>Júnior</option>
-                                        <option>Pleno</option>
-                                    </select>
-                                </div>
-                                <div class="grupo-input full-width">
-                                    <label for="portfolio">GitHub ou Portfólio
-                                        (URL)</label>
-                                    <input type="url" id="portfolio"
-                                        placeholder="https://github.com/...">
-                                </div>
-                                <div class="grupo-input">
-                                    <label for="salario">Pretensão Salarial
-                                        (R$)</label>
-                                    <input type="number" id="salario"
-                                        placeholder="Ex: 3500">
-                                </div>
-                                <div class="grupo-input">
-                                    <label for="curriculo">Currículo
-                                        (PDF)</label>
-                                    <input type="file" id="curriculo"
-                                        accept=".pdf">
-                                </div>
-                                <div class="grupo-input full-width">
-                                    <p class="label-estilizada">Disponibilidade
-                                        imediata?</p>
-                                    <div class="opcoes-radio">
-                                        <label><input type="radio" name="disp">
-                                            Sim</label>
-                                        <label><input type="radio" name="disp">
-                                            Não</label>
-                                    </div>
-                                </div>
-                                <div class="grupo-input full-width">
-                                    <label for="bio">Fale um pouco sobre
-                                        você</label>
-                                    <textarea id="bio" rows="5"
-                                        placeholder="Escreva aqui..."></textarea>
-                                </div>
+                        <div class="grid-form">
+                            <div class="grupo-input">
+                                <label for="nome">Nome Completo</label>
+                                <input type="text" id="nome" placeholder="Digite seu nome">
+                                <span class="erro" id="erro-nome"></span>
                             </div>
+                            <div class="grupo-input">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" placeholder="Digite seu e-mail">
+                                <span class="erro" id="erro-email"></span>
+                            </div>
+                            <div class="grupo-input">
+                                <label for="nascimento">Data de Nascimento</label>
+                                <input type="date" id="nascimento">
+                                <span class="erro" id="erro-nascimento"></span>
+                            </div>
+                            <div class="grupo-input">
+                                <label for="nivel">Nível de Experiência</label>
+                                <select id="nivel">
+                                    <option value="">Selecione...</option>
+                                    <option>Estagiária</option>
+                                    <option>Júnior</option>
+                                    <option>Pleno</option>
+                                    <option>Sênior</option>
+                                </select>
+                                <span class="erro" id="erro-nivel"></span>
+                            </div>
+                            <div class="grupo-input full-width">
+                                <label for="portfolio">GitHub ou Portfólio (URL)</label>
+                                <input type="url" id="portfolio" placeholder="https://github.com/...">
+                                <span class="erro" id="erro-portfolio"></span>
+                            </div>
+                            <div class="grupo-input">
+                                <label for="salario">Pretensão Salarial (R$)</label>
+                                <input type="number" id="salario" placeholder="Ex: 3500" min="0">
+                                <span class="erro" id="erro-salario"></span>
+                            </div>
+                            <div class="grupo-input">
+                                <label for="curriculo">Currículo (PDF)</label>
+                                <input type="file" id="curriculo" accept=".pdf">
+                                <span class="erro" id="erro-curriculo"></span>
+                            </div>
+                            <div class="grupo-input full-width">
+                                <p class="label-estilizada">Disponibilidade imediata?</p>
+                                <div class="opcoes-radio">
+                                    <label><input type="radio" name="disp" value="sim"> Sim</label>
+                                    <label><input type="radio" name="disp" value="nao"> Não</label>
+                                </div>
+                                <span class="erro" id="erro-disp"></span>
+                            </div>
+                            <div class="grupo-input full-width">
+                                <label for="bio">Fale um pouco sobre você</label>
+                                <textarea id="bio" rows="5" placeholder="Escreva aqui..."></textarea>
+                                <span class="erro" id="erro-bio"></span>
+                            </div>
+                        </div>
 
-                            <button type="submit"
-                                class="btn-enviar">Finalizar
-                                Cadastro</button>
-                        </form>
+                        <button type="submit" class="btn-enviar">Finalizar Cadastro</button>
+                    </form>
+
+                    <!-- Mensagem de sucesso (oculta por padrão) -->
+                    <div id="mensagem-sucesso" class="mensagem-sucesso" style="display:none;">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <h3>Cadastro realizado com sucesso!</h3>
+                        <p>Seu perfil foi enviado. Em breve entraremos em contato.</p>
+                        <a href="vagas.html" class="btn-branco" style="background:#5b096d; color:#fffff7;">Explorar
+                            Vagas</a>
                     </div>
-
                 </div>
-            </section>
 
-            <section class="cta-container">
-                <div class="cta-box">
-                    <div class="cta-texto">
-                        <h3>Suas próximas conquistas começam aqui.</h3>
-                        <p>JDescubra vagas exclusivas, conecte-se com empresas
-                            que valorizam a diversidade e encontre o lugar onde
-                            seu talento tech vai brilhar.</p>
-                    </div>
+            </div>
+        </section>
 
-                    <div class="cta-botoes">
-                        <a href="vagas.html" class="btn-branco">Explorar
-                            Vagas
-                        </a>
-                    </div>
+        <section class="cta-container">
+            <div class="cta-box">
+                <div class="cta-texto">
+                    <h3>Suas próximas conquistas começam aqui.</h3>
+                    <p>Descubra vagas exclusivas, conecte-se com empresas que valorizam a diversidade e encontre o lugar
+                        onde seu talento tech vai brilhar.</p>
                 </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <h3>WConnect na sua caixa de entrada!</h3>
-            <p>As melhores conexões do mundo da tecnologia, enviadas
-                semanalmente para você.</p>
-
-            <div class="newsletter">
-                <input type="email" placeholder="Insira seu e-mail">
-                <button>Me inscrever</button>
+                <div class="cta-botoes">
+                    <a href="vagas.html" class="btn-branco">Explorar Vagas</a>
+                </div>
             </div>
+        </section>
+    </main>
 
-            <div class="redes-sociais">
-                <i class="bi bi-facebook"></i>
-                <i class="bi bi-twitter"></i>
-                <i class="bi bi-instagram"></i>
-                <i class="bi bi-linkedin"></i>
-                <i class="bi bi-youtube"></i>
-            </div>
-            <hr>
-            <p class="copyright">Copyright <span class="simbolo">©</span> 2026
-                Gabrielly Rodrigues & Natália
-                Cerqueira</p>
-        </footer>
-    </body>
+    <footer class="footer">
+        <h3>WConnect na sua caixa de entrada!</h3>
+        <p>As melhores conexões do mundo da tecnologia, enviadas semanalmente para você.</p>
+        <div class="newsletter">
+            <input type="email" placeholder="Insira seu e-mail">
+            <button>Me inscrever</button>
+        </div>
+        <div class="redes-sociais">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-linkedin"></i>
+            <i class="bi bi-youtube"></i>
+        </div>
+    </footer>
+
+    <script>
+        // Valida o formulário de cadastro ao submeter
+        function validarFormulario(event) {
+            // Impede o envio padrão do formulário
+            event.preventDefault();
+
+            var valido = true;
+
+            // Limpa mensagens de erro anteriores
+            document.querySelectorAll('.erro').forEach(function (el) {
+                el.textContent = '';
+            });
+
+            // Valida Nome
+            var nome = document.getElementById('nome').value.trim();
+            if (nome === '') {
+                document.getElementById('erro-nome').textContent = 'Por favor, informe seu nome completo.';
+                valido = false;
+            }
+
+            // Valida E-mail
+            var email = document.getElementById('email').value.trim();
+            if (email === '') {
+                document.getElementById('erro-email').textContent = 'Por favor, informe seu e-mail.';
+                valido = false;
+            } else if (!email.includes('@') || !email.includes('.')) {
+                document.getElementById('erro-email').textContent = 'Informe um e-mail válido.';
+                valido = false;
+            }
+
+            // Valida Data de Nascimento
+            var nascimento = document.getElementById('nascimento').value;
+            if (nascimento === '') {
+                document.getElementById('erro-nascimento').textContent = 'Por favor, informe sua data de nascimento.';
+                valido = false;
+            }
+
+            // Valida Nível de Experiência
+            var nivel = document.getElementById('nivel').value;
+            if (nivel === '') {
+                document.getElementById('erro-nivel').textContent = 'Por favor, selecione seu nível de experiência.';
+                valido = false;
+            }
+
+            // Valida Pretensão Salarial
+            var salario = document.getElementById('salario').value;
+            if (salario === '' || salario <= 0) {
+                document.getElementById('erro-salario').textContent = 'Por favor, informe sua pretensão salarial.';
+                valido = false;
+            }
+
+            // Valida Currículo
+            var curriculo = document.getElementById('curriculo').files;
+            if (curriculo.length === 0) {
+                document.getElementById('erro-curriculo').textContent = 'Por favor, anexe seu currículo em PDF.';
+                valido = false;
+            }
+
+            // Valida Disponibilidade
+            var dispSelecionada = document.querySelector('input[name="disp"]:checked');
+            if (!dispSelecionada) {
+                document.getElementById('erro-disp').textContent = 'Por favor, informe sua disponibilidade.';
+                valido = false;
+            }
+
+            // Valida Bio
+            var bio = document.getElementById('bio').value.trim();
+            if (bio === '') {
+                document.getElementById('erro-bio').textContent = 'Por favor, escreva um pouco sobre você.';
+                valido = false;
+            }
+
+            // Se tudo válido, exibe mensagem de sucesso e esconde o formulário
+            if (valido) {
+                document.getElementById('form-cadastro').style.display = 'none';
+                document.getElementById('mensagem-sucesso').style.display = 'block';
+            }
+
+            return false;
+        }
+    </script>
+
+</body>
+
 </html>

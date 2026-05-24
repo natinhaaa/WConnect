@@ -1,551 +1,135 @@
+<!-- HOMEPAGE -->
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Gabrielly N Rodrigues e Natália V Cerqueira">
-        <meta name="keywords" content="currículos, talentos femininos, tecnologia">
+        <meta name="keywords" content="carreiras, área de tecnologia, talentos femininos">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <title>Talentos - WConnect</title>
+        <title>WConnect</title>
     </head>
-    <body>
 
+    <body>
         <header class="header">
             <div class="logo">
-                <img src="/img/logo.png" alt="Logo">
+                <img src="img/logo.png" alt="Logo">
             </div>
+
             <nav class="menu">
                 <ul>
-                    <li><a href="homepage.html">Home</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li class="item-vagas">
-                        <a href="#">Vagas ▼</a>
-                        <ul class="grupo-vagas">
-                            <li><a href="#">Estágios</a></li>
-                            <li><a href="#">Freelancer</a></li>
-                        </ul>
+                    <li>
+                        <a href="homepage.html">Home</a>
                     </li>
-                    <li><a href="curriculos.html" style="color:#5b096d; font-weight:600;">Talentos</a></li>
-                    <li><a href="#">Mural</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li>
+                        <a href="#">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="vagas.html">Vagas</a>
+                    </li>
+                    <li>
+                        <a href="curriculos.html">Talentos</a>
+                    </li>
+                    <li>
+                        <a href="#">Contato</a>
+                    </li>
                 </ul>
             </nav>
+
             <div class="botoes">
-                <button class="btn-busca"><i class="bi bi-search"></i></button>
+                <button class="btn-busca">
+                    <i class="bi bi-search"></i>
+                </button>
                 <a href="cadastro.html" class="btn-curriculo">Enviar Currículo</a>
             </div>
         </header>
 
         <main>
-            <section class="banner-cadastro">
-                <div class="conteudo-banner">
-                    <h4>EXPLORE</h4>
-                    <h1 class="titulo-banner">Talentos</h1>
+            <section class="hero">
+                <div class="conteudo-hero">
+                    <h1>Conectando talentos femininos à indústria de T.I</h1>
+
+                    <p>Faça parte da rede que une talentos femininos a empresas
+                        comprometidas com a equidade, criando pontes
+                        diretas para as melhores oportunidades tech.</p>
+
+                    <div class="botoes-hero">
+                        <button class="btn-comecar" onclick="window.location.href='cadastro.html'">Começar agora →</button>
+                        <button class="btn-saibamais" onclick="document.querySelector('.carreira').scrollIntoView({behavior:'smooth'})">Saiba mais</button>
+                    </div>
                 </div>
             </section>
 
-            <section class="secao-vagas">
-                <div class="container-vagas">
+            <section class="carreira">
+                <h2>Como a WConnect impulsiona sua carreira?</h2>
 
-                    <aside class="sidebar-filtros">
-                        <h3 class="titulo-filtros">Filtrar Talentos</h3>
+                <p class="descricao">Nossa plataforma foi desenhada para
+                    encurtar a distância entre o seu talento e as
+                    grandes oportunidades do mercado tecnológico, através de
+                    três pilares fundamentais:</p>
 
-                        <div class="grupo-filtro">
-                            <label for="filtro-nome">Nome ou habilidade</label>
-                            <div class="input-icone">
-                                <i class="bi bi-search"></i>
-                                <input type="text" id="filtro-nome" placeholder="Ex: Ana, Python...">
-                            </div>
+                <div class="container-cards">
+
+                    <div class="card">
+                        <div class="icone">
+                            <i class="bi bi-person-fill"></i>
                         </div>
-
-                        <div class="grupo-filtro">
-                            <label for="filtro-area">Área de Atuação</label>
-                            <select id="filtro-area">
-                                <option value="">Todas as áreas</option>
-                                <option>Desenvolvimento Web</option>
-                                <option>Mobile</option>
-                                <option>Data Science</option>
-                                <option>UX/UI Design</option>
-                                <option>DevOps / Cloud</option>
-                                <option>Segurança da Informação</option>
-                                <option>QA / Testes</option>
-                                <option>Inteligência Artificial</option>
-                                <option>Produto</option>
-                            </select>
-                        </div>
-
-                        <div class="grupo-filtro">
-                            <label for="filtro-nivel">Nível de Experiência</label>
-                            <select id="filtro-nivel">
-                                <option value="">Todos os níveis</option>
-                                <option>Estagiária</option>
-                                <option>Júnior</option>
-                                <option>Pleno</option>
-                                <option>Sênior</option>
-                                <option>Especialista</option>
-                            </select>
-                        </div>
-
-                        <div class="grupo-filtro">
-                            <label for="filtro-estado">Estado</label>
-                            <select id="filtro-estado">
-                                <option value="">Todos os estados</option>
-                                <option>São Paulo</option>
-                                <option>Rio de Janeiro</option>
-                                <option>Minas Gerais</option>
-                                <option>Paraná</option>
-                                <option>Santa Catarina</option>
-                                <option>Distrito Federal</option>
-                                <option>Bahia</option>
-                                <option>Pernambuco</option>
-                                <option>Ceará</option>
-                            </select>
-                        </div>
-
-                        <div class="grupo-filtro">
-                            <label>Disponibilidade Imediata</label>
-                            <div class="opcoes-checkbox">
-                                <label><input type="checkbox" id="check-disponivel"> Disponível agora</label>
-                            </div>
-                        </div>
-
-                        <div class="grupo-filtro">
-                            <label>Modalidade Preferida</label>
-                            <div class="opcoes-checkbox">
-                                <label><input type="checkbox" class="check-modalidade" value="Remoto"> Remoto</label>
-                                <label><input type="checkbox" class="check-modalidade" value="Presencial"> Presencial</label>
-                                <label><input type="checkbox" class="check-modalidade" value="Híbrido"> Híbrido</label>
-                            </div>
-                        </div>
-
-                        <button class="btn-filtrar" onclick="aplicarFiltros()">Aplicar Filtros</button>
-                        <button class="btn-limpar" onclick="limparFiltros()">Limpar filtros</button>
-                    </aside>
-
-                    <div class="area-vagas">
-
-                        <div class="barra-busca-topo">
-                            <div class="input-icone">
-                                <i class="bi bi-search"></i>
-                                <input type="text" id="busca-rapida" placeholder="Busca rápida por nome, área ou habilidade..." oninput="buscaRapida()">
-                            </div>
-                        </div>
-
-                        <div class="vagas-header">
-                            <p class="total-vagas" id="label-total"><strong>12</strong> profissionais encontradas</p>
-                            <div class="ordenar">
-                                <label for="ordenar">Ordenar por</label>
-                                <select id="ordenar" onchange="ordenarCards()">
-                                    <option value="nome">Nome (A–Z)</option>
-                                    <option value="nivel">Nível de experiência</option>
-                                    <option value="disponivel">Disponibilidade</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row g-3" id="grid-profissionais">
-
-                            <div class="col-12 col-md-6 col-xl-4 card-col"
-                                data-nome="Ana Beatriz Lima" data-cargo="Desenvolvedora Front-end"
-                                data-area="Desenvolvimento Web" data-nivel="Júnior"
-                                data-estado="São Paulo" data-disponivel="Sim"
-                                data-modalidade="Remoto" data-skills="html,css,react,javascript">
-                                <div class="card-profissional">
-                                    <div class="card-prof-topo">
-                                        <div class="avatar-prof"><i class="bi bi-person-fill"></i></div>
-                                        <div class="info-prof">
-                                            <h4>Ana Beatriz Lima</h4>
-                                            <span class="cargo-prof">Desenvolvedora Front-end</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-prof-detalhes">
-                                        <span><i class="bi bi-geo-alt"></i> São Paulo, SP</span>
-                                        <span><i class="bi bi-bar-chart"></i> Júnior</span>
-                                        <span><i class="bi bi-laptop"></i> Remoto</span>
-                                    </div>
-                                    <div class="card-vaga-tags">
-                                        <span class="tag">HTML</span>
-                                        <span class="tag">CSS</span>
-                                        <span class="tag">React</span>
-                                        <span class="tag">JavaScript</span>
-                                    </div>
-                                    <div class="card-prof-rodape">
-                                        <span class="badge-disp disp-sim">● Disponível</span>
-                                        <a href="#" class="btn-ver-vaga">Ver currículo</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-6 col-xl-4 card-col"
-                                data-nome="Carla Mendonça" data-cargo="Data Scientist"
-                                data-area="Data Science" data-nivel="Pleno"
-                                data-estado="Minas Gerais" data-disponivel="Não"
-                                data-modalidade="Híbrido" data-skills="python,r,sql,pandas">
-                                <div class="card-profissional">
-                                    <div class="card-prof-topo">
-                                        <div class="avatar-prof"><i class="bi bi-person-fill"></i></div>
-                                        <div class="info-prof">
-                                            <h4>Carla Mendonça</h4>
-                                            <span class="cargo-prof">Data Scientist</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-prof-detalhes">
-                                        <span><i class="bi bi-geo-alt"></i> Belo Horizonte, MG</span>
-                                        <span><i class="bi bi-bar-chart"></i> Pleno</span>
-                                        <span><i class="bi bi-laptop"></i> Híbrido</span>
-                                    </div>
-                                    <div class="card-vaga-tags">
-                                        <span class="tag">Python</span>
-                                        <span class="tag">R</span>
-                                        <span class="tag">SQL</span>
-                                        <span class="tag">Pandas</span>
-                                    </div>
-                                    <div class="card-prof-rodape">
-                                        <span class="badge-disp disp-nao">● Não disponível</span>
-                                        <a href="#" class="btn-ver-vaga">Ver currículo</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-6 col-xl-4 card-col"
-                                data-nome="Fernanda Rocha" data-cargo="UX/UI Designer"
-                                data-area="UX/UI Design" data-nivel="Sênior"
-                                data-estado="Rio de Janeiro" data-disponivel="Sim"
-                                data-modalidade="Presencial" data-skills="figma,adobe xd,prototyping,pesquisa ux">
-                                <div class="card-profissional">
-                                    <div class="card-prof-topo">
-                                        <div class="avatar-prof"><i class="bi bi-person-fill"></i></div>
-                                        <div class="info-prof">
-                                            <h4>Fernanda Rocha</h4>
-                                            <span class="cargo-prof">UX/UI Designer</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-prof-detalhes">
-                                        <span><i class="bi bi-geo-alt"></i> Rio de Janeiro, RJ</span>
-                                        <span><i class="bi bi-bar-chart"></i> Sênior</span>
-                                        <span><i class="bi bi-laptop"></i> Presencial</span>
-                                    </div>
-                                    <div class="card-vaga-tags">
-                                        <span class="tag">Figma</span>
-                                        <span class="tag">Adobe XD</span>
-                                        <span class="tag">Prototyping</span>
-                                        <span class="tag">Pesquisa UX</span>
-                                    </div>
-                                    <div class="card-prof-rodape">
-                                        <span class="badge-disp disp-sim">● Disponível</span>
-                                        <a href="#" class="btn-ver-vaga">Ver currículo</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-6 col-xl-4 card-col"
-                                data-nome="Juliana Souza" data-cargo="DevOps Engineer"
-                                data-area="DevOps / Cloud" data-nivel="Pleno"
-                                data-estado="Paraná" data-disponivel="Sim"
-                                data-modalidade="Remoto" data-skills="docker,kubernetes,aws,ci/cd,linux">
-                                <div class="card-profissional">
-                                    <div class="card-prof-topo">
-                                        <div class="avatar-prof"><i class="bi bi-person-fill"></i></div>
-                                        <div class="info-prof">
-                                            <h4>Juliana Souza</h4>
-                                            <span class="cargo-prof">DevOps Engineer</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-prof-detalhes">
-                                        <span><i class="bi bi-geo-alt"></i> Curitiba, PR</span>
-                                        <span><i class="bi bi-bar-chart"></i> Pleno</span>
-                                        <span><i class="bi bi-laptop"></i> Remoto</span>
-                                    </div>
-                                    <div class="card-vaga-tags">
-                                        <span class="tag">Docker</span>
-                                        <span class="tag">Kubernetes</span>
-                                        <span class="tag">AWS</span>
-                                        <span class="tag">CI/CD</span>
-                                    </div>
-                                    <div class="card-prof-rodape">
-                                        <span class="badge-disp disp-sim">● Disponível</span>
-                                        <a href="#" class="btn-ver-vaga">Ver currículo</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-6 col-xl-4 card-col"
-                                data-nome="Marina Costa" data-cargo="Analista de QA"
-                                data-area="QA / Testes" data-nivel="Júnior"
-                                data-estado="São Paulo" data-disponivel="Não"
-                                data-modalidade="Híbrido" data-skills="selenium,cypress,postman,bdd">
-                                <div class="card-profissional">
-                                    <div class="card-prof-topo">
-                                        <div class="avatar-prof"><i class="bi bi-person-fill"></i></div>
-                                        <div class="info-prof">
-                                            <h4>Marina Costa</h4>
-                                            <span class="cargo-prof">Analista de QA</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-prof-detalhes">
-                                        <span><i class="bi bi-geo-alt"></i> São Paulo, SP</span>
-                                        <span><i class="bi bi-bar-chart"></i> Júnior</span>
-                                        <span><i class="bi bi-laptop"></i> Híbrido</span>
-                                    </div>
-                                    <div class="card-vaga-tags">
-                                        <span class="tag">Selenium</span>
-                                        <span class="tag">Cypress</span>
-                                        <span class="tag">Postman</span>
-                                        <span class="tag">BDD</span>
-                                    </div>
-                                    <div class="card-prof-rodape">
-                                        <span class="badge-disp disp-nao">● Não disponível</span>
-                                        <a href="#" class="btn-ver-vaga">Ver currículo</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-6 col-xl-4 card-col"
-                                data-nome="Priscila Teixeira" data-cargo="Desenvolvedora Mobile"
-                                data-area="Mobile" data-nivel="Pleno"
-                                data-estado="Santa Catarina" data-disponivel="Sim"
-                                data-modalidade="Remoto" data-skills="flutter,dart,react native,firebase">
-                                <div class="card-profissional">
-                                    <div class="card-prof-topo">
-                                        <div class="avatar-prof"><i class="bi bi-person-fill"></i></div>
-                                        <div class="info-prof">
-                                            <h4>Priscila Teixeira</h4>
-                                            <span class="cargo-prof">Desenvolvedora Mobile</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-prof-detalhes">
-                                        <span><i class="bi bi-geo-alt"></i> Florianópolis, SC</span>
-                                        <span><i class="bi bi-bar-chart"></i> Pleno</span>
-                                        <span><i class="bi bi-laptop"></i> Remoto</span>
-                                    </div>
-                                    <div class="card-vaga-tags">
-                                        <span class="tag">Flutter</span>
-                                        <span class="tag">Dart</span>
-                                        <span class="tag">React Native</span>
-                                        <span class="tag">Firebase</span>
-                                    </div>
-                                    <div class="card-prof-rodape">
-                                        <span class="badge-disp disp-sim">● Disponível</span>
-                                        <a href="#" class="btn-ver-vaga">Ver currículo</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-6 col-xl-4 card-col"
-                                data-nome="Larissa Andrade" data-cargo="Especialista em IA"
-                                data-area="Inteligência Artificial" data-nivel="Sênior"
-                                data-estado="São Paulo" data-disponivel="Não"
-                                data-modalidade="Remoto" data-skills="python,tensorflow,pytorch,nlp">
-                                <div class="card-profissional">
-                                    <div class="card-prof-topo">
-                                        <div class="avatar-prof"><i class="bi bi-person-fill"></i></div>
-                                        <div class="info-prof">
-                                            <h4>Larissa Andrade</h4>
-                                            <span class="cargo-prof">Especialista em IA</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-prof-detalhes">
-                                        <span><i class="bi bi-geo-alt"></i> São Paulo, SP</span>
-                                        <span><i class="bi bi-bar-chart"></i> Sênior</span>
-                                        <span><i class="bi bi-laptop"></i> Remoto</span>
-                                    </div>
-                                    <div class="card-vaga-tags">
-                                        <span class="tag">TensorFlow</span>
-                                        <span class="tag">PyTorch</span>
-                                        <span class="tag">NLP</span>
-                                        <span class="tag">Python</span>
-                                    </div>
-                                    <div class="card-prof-rodape">
-                                        <span class="badge-disp disp-nao">● Não disponível</span>
-                                        <a href="#" class="btn-ver-vaga">Ver currículo</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-6 col-xl-4 card-col"
-                                data-nome="Tatiane Ferreira" data-cargo="Analista de Segurança"
-                                data-area="Segurança da Informação" data-nivel="Pleno"
-                                data-estado="Distrito Federal" data-disponivel="Sim"
-                                data-modalidade="Híbrido" data-skills="pentest,siem,linux,soc,lgpd">
-                                <div class="card-profissional">
-                                    <div class="card-prof-topo">
-                                        <div class="avatar-prof"><i class="bi bi-person-fill"></i></div>
-                                        <div class="info-prof">
-                                            <h4>Tatiane Ferreira</h4>
-                                            <span class="cargo-prof">Analista de Segurança</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-prof-detalhes">
-                                        <span><i class="bi bi-geo-alt"></i> Brasília, DF</span>
-                                        <span><i class="bi bi-bar-chart"></i> Pleno</span>
-                                        <span><i class="bi bi-laptop"></i> Híbrido</span>
-                                    </div>
-                                    <div class="card-vaga-tags">
-                                        <span class="tag">Pentest</span>
-                                        <span class="tag">SIEM</span>
-                                        <span class="tag">Linux</span>
-                                        <span class="tag">SOC</span>
-                                    </div>
-                                    <div class="card-prof-rodape">
-                                        <span class="badge-disp disp-sim">● Disponível</span>
-                                        <a href="#" class="btn-ver-vaga">Ver currículo</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-6 col-xl-4 card-col"
-                                data-nome="Débora Nunes" data-cargo="Product Manager"
-                                data-area="Produto" data-nivel="Sênior"
-                                data-estado="Rio de Janeiro" data-disponivel="Sim"
-                                data-modalidade="Presencial" data-skills="agile,okr,scrum,roadmapping,analytics">
-                                <div class="card-profissional">
-                                    <div class="card-prof-topo">
-                                        <div class="avatar-prof"><i class="bi bi-person-fill"></i></div>
-                                        <div class="info-prof">
-                                            <h4>Débora Nunes</h4>
-                                            <span class="cargo-prof">Product Manager</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-prof-detalhes">
-                                        <span><i class="bi bi-geo-alt"></i> Rio de Janeiro, RJ</span>
-                                        <span><i class="bi bi-bar-chart"></i> Sênior</span>
-                                        <span><i class="bi bi-laptop"></i> Presencial</span>
-                                    </div>
-                                    <div class="card-vaga-tags">
-                                        <span class="tag">Agile</span>
-                                        <span class="tag">OKR</span>
-                                        <span class="tag">Scrum</span>
-                                        <span class="tag">Analytics</span>
-                                    </div>
-                                    <div class="card-prof-rodape">
-                                        <span class="badge-disp disp-sim">● Disponível</span>
-                                        <a href="#" class="btn-ver-vaga">Ver currículo</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-6 col-xl-4 card-col"
-                                data-nome="Isabela Campos" data-cargo="Desenvolvedora Back-end"
-                                data-area="Desenvolvimento Web" data-nivel="Estagiária"
-                                data-estado="Minas Gerais" data-disponivel="Sim"
-                                data-modalidade="Remoto" data-skills="java,spring boot,postgresql,git">
-                                <div class="card-profissional">
-                                    <div class="card-prof-topo">
-                                        <div class="avatar-prof"><i class="bi bi-person-fill"></i></div>
-                                        <div class="info-prof">
-                                            <h4>Isabela Campos</h4>
-                                            <span class="cargo-prof">Desenvolvedora Back-end</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-prof-detalhes">
-                                        <span><i class="bi bi-geo-alt"></i> Uberlândia, MG</span>
-                                        <span><i class="bi bi-bar-chart"></i> Estagiária</span>
-                                        <span><i class="bi bi-laptop"></i> Remoto</span>
-                                    </div>
-                                    <div class="card-vaga-tags">
-                                        <span class="tag">Java</span>
-                                        <span class="tag">Spring Boot</span>
-                                        <span class="tag">PostgreSQL</span>
-                                        <span class="tag">Git</span>
-                                    </div>
-                                    <div class="card-prof-rodape">
-                                        <span class="badge-disp disp-sim">● Disponível</span>
-                                        <a href="#" class="btn-ver-vaga">Ver currículo</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-6 col-xl-4 card-col"
-                                data-nome="Camila Dias" data-cargo="Engenheira de Dados"
-                                data-area="Data Science" data-nivel="Especialista"
-                                data-estado="São Paulo" data-disponivel="Não"
-                                data-modalidade="Remoto" data-skills="spark,kafka,dbt,airflow,bigquery">
-                                <div class="card-profissional">
-                                    <div class="card-prof-topo">
-                                        <div class="avatar-prof"><i class="bi bi-person-fill"></i></div>
-                                        <div class="info-prof">
-                                            <h4>Camila Dias</h4>
-                                            <span class="cargo-prof">Engenheira de Dados</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-prof-detalhes">
-                                        <span><i class="bi bi-geo-alt"></i> São Paulo, SP</span>
-                                        <span><i class="bi bi-bar-chart"></i> Especialista</span>
-                                        <span><i class="bi bi-laptop"></i> Remoto</span>
-                                    </div>
-                                    <div class="card-vaga-tags">
-                                        <span class="tag">Spark</span>
-                                        <span class="tag">Kafka</span>
-                                        <span class="tag">dbt</span>
-                                        <span class="tag">BigQuery</span>
-                                    </div>
-                                    <div class="card-prof-rodape">
-                                        <span class="badge-disp disp-nao">● Não disponível</span>
-                                        <a href="#" class="btn-ver-vaga">Ver currículo</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-6 col-xl-4 card-col"
-                                data-nome="Renata Oliveira" data-cargo="Cloud Architect"
-                                data-area="DevOps / Cloud" data-nivel="Sênior"
-                                data-estado="Paraná" data-disponivel="Sim"
-                                data-modalidade="Remoto" data-skills="azure,terraform,gcp,serverless,python">
-                                <div class="card-profissional">
-                                    <div class="card-prof-topo">
-                                        <div class="avatar-prof"><i class="bi bi-person-fill"></i></div>
-                                        <div class="info-prof">
-                                            <h4>Renata Oliveira</h4>
-                                            <span class="cargo-prof">Cloud Architect</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-prof-detalhes">
-                                        <span><i class="bi bi-geo-alt"></i> Curitiba, PR</span>
-                                        <span><i class="bi bi-bar-chart"></i> Sênior</span>
-                                        <span><i class="bi bi-laptop"></i> Remoto</span>
-                                    </div>
-                                    <div class="card-vaga-tags">
-                                        <span class="tag">Azure</span>
-                                        <span class="tag">Terraform</span>
-                                        <span class="tag">GCP</span>
-                                        <span class="tag">Serverless</span>
-                                    </div>
-                                    <div class="card-prof-rodape">
-                                        <span class="badge-disp disp-sim">● Disponível</span>
-                                        <a href="#" class="btn-ver-vaga">Ver currículo</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="sem-resultados" id="sem-resultados">
-                            <i class="bi bi-search"></i>
-                            <h5>Nenhuma profissional encontrada</h5>
-                            <p>Tente ajustar os filtros ou o termo de busca.</p>
-                        </div>
-
-                        <div class="paginas" id="paginacao">
-                            <button class="pag-btn pag-ativo">1</button>
-                            <button class="pag-btn">2</button>
-                            <button class="pag-btn">3</button>
-                            <button class="pag-btn pag-proximo">Próxima <i class="bi bi-arrow-right"></i></button>
-                        </div>
-
+                        <h3>Crie seu perfil Tech</h3>
+                        <p>Destaque suas habilidades, projetos e experiências.
+                            A plataforma ajuda você a construir um
+                            portfólio focado no que o mercado de T.I. realmente
+                            procura.</p>
+                        <button onclick="window.location.href='cadastro.html'">Começar perfil</button>
                     </div>
+
+                    <div class="card">
+                        <div class="icone">
+                            <i class="bi bi-buildings-fill"></i>
+                        </div>
+                        <h3>Conecte-se com Empresas</h3>
+                        <p>Tenha acesso direto a empresas que priorizam a
+                            diversidade e buscam talentos femininos para
+                            compor seus times de tecnologia e inovação.</p>
+                        <button onclick="window.location.href='vagas.html'">Ver empresas</button>
+                    </div>
+
+                    <div class="card">
+                        <div class="icone">
+                            <i class="bi bi-briefcase-fill"></i>
+                        </div>
+                        <h3>Encontre Vagas</h3>
+                        <p>Acesse oportunidades exclusivas em empresas que
+                            priorizam a diversidade e buscam talentos
+                            femininos para seus times.</p>
+                        <button onclick="window.location.href='vagas.html'">Explorar vagas</button>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="como-funciona">
+                <h4>NOSSO PROJETO</h4>
+                <h2>Entenda como funciona</h2>
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube.com/embed/RUsUQ9tRHHQ?si=6sPMTBJZZV026PkP"
+                        title="Entenda como funciona o site WConnect"
+                        frameborder="0" allowfullscreen></iframe>
                 </div>
             </section>
 
             <section class="cta-container">
                 <div class="cta-box">
                     <div class="cta-texto">
-                        <h3>É recrutadora e quer encontrar os melhores talentos?</h3>
-                        <p>Publique uma vaga e receba currículos de profissionais qualificadas em tecnologia.</p>
+                        <h3>Pronta para transformar sua carreira?</h3>
+                        <p>Junte-se à WConnect e conecte seu talento às melhores
+                            oportunidades da tecnologia.</p>
                     </div>
+
                     <div class="cta-botoes">
-                        <a href="vagas.html" class="btn-branco">Ver Vagas</a>
+                        <a href="cadastro.html" class="btn-branco">Cadastre seu Currículo</a>
                     </div>
                 </div>
             </section>
@@ -553,11 +137,14 @@
 
         <footer class="footer">
             <h3>WConnect na sua caixa de entrada!</h3>
-            <p>As melhores conexões do mundo da tecnologia, enviadas semanalmente para você.</p>
+            <p>As melhores conexões do mundo da tecnologia, enviadas
+                semanalmente para você.</p>
+
             <div class="newsletter">
                 <input type="email" placeholder="Insira seu e-mail">
                 <button>Me inscrever</button>
             </div>
+
             <div class="redes-sociais">
                 <i class="bi bi-facebook"></i>
                 <i class="bi bi-twitter"></i>
@@ -566,96 +153,9 @@
                 <i class="bi bi-youtube"></i>
             </div>
             <hr>
-            <p class="copyright">Copyright <span class="simbolo">©</span> 2026 Gabrielly Rodrigues & Natália Cerqueira</p>
+            <p class="copyright">Copyright <span class="simbolo">©</span> 2026
+                Gabrielly Rodrigues & Natália Cerqueira</p>
         </footer>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-        <script>
-            const todos = Array.from(document.querySelectorAll('#grid-profissionais .card-col'));
-
-            function filtrar() {
-                const termo  = document.getElementById('filtro-nome').value.toLowerCase().trim();
-                const area   = document.getElementById('filtro-area').value;
-                const nivel  = document.getElementById('filtro-nivel').value;
-                const estado = document.getElementById('filtro-estado').value;
-                const soDisp = document.getElementById('check-disponivel').checked;
-                const mods   = Array.from(document.querySelectorAll('.check-modalidade:checked')).map(c => c.value);
-
-                let visiveis = 0;
-
-                todos.forEach(card => {
-                    const buscaOk  = !termo  || card.dataset.nome.toLowerCase().includes(termo)
-                                             || card.dataset.cargo.toLowerCase().includes(termo)
-                                             || card.dataset.skills.includes(termo);
-                    const areaOk   = !area   || card.dataset.area   === area;
-                    const nivelOk  = !nivel  || card.dataset.nivel  === nivel;
-                    const estadoOk = !estado || card.dataset.estado === estado;
-                    const dispOk   = !soDisp || card.dataset.disponivel === 'Sim';
-                    const modOk    = mods.length === 0 || mods.includes(card.dataset.modalidade);
-
-                    const visivel = buscaOk && areaOk && nivelOk && estadoOk && dispOk && modOk;
-                    card.style.display = visivel ? '' : 'none';
-                    if (visivel) visiveis++;
-                });
-
-                document.getElementById('label-total').innerHTML =
-                    `<strong>${visiveis}</strong> profissiona${visiveis === 1 ? 'l encontrada' : 'is encontradas'}`;
-
-                document.getElementById('sem-resultados').style.display = visiveis === 0 ? 'block' : 'none';
-                document.getElementById('paginacao').style.display       = visiveis === 0 ? 'none'  : 'flex';
-            }
-
-            function buscaRapida() {
-                document.getElementById('filtro-nome').value = document.getElementById('busca-rapida').value;
-                filtrar();
-            }
-
-            function aplicarFiltros() {
-                document.getElementById('busca-rapida').value = document.getElementById('filtro-nome').value;
-                filtrar();
-            }
-
-            function limparFiltros() {
-                ['filtro-nome', 'busca-rapida', 'filtro-area', 'filtro-nivel', 'filtro-estado'].forEach(id => {
-                    document.getElementById(id).value = '';
-                });
-                document.getElementById('check-disponivel').checked = false;
-                document.querySelectorAll('.check-modalidade').forEach(c => c.checked = false);
-                todos.forEach(c => c.style.display = '');
-                document.getElementById('label-total').innerHTML = `<strong>${todos.length}</strong> profissionais encontradas`;
-                document.getElementById('sem-resultados').style.display = 'none';
-                document.getElementById('paginacao').style.display      = 'flex';
-            }
-
-            function ordenarCards() {
-                const criterio = document.getElementById('ordenar').value;
-                const ordem = { 'Estagiária': 1, 'Júnior': 2, 'Pleno': 3, 'Sênior': 4, 'Especialista': 5 };
-                const grid  = document.getElementById('grid-profissionais');
-
-                todos.sort((a, b) => {
-                    if (criterio === 'nome')      return a.dataset.nome.localeCompare(b.dataset.nome, 'pt-BR');
-                    if (criterio === 'nivel')     return (ordem[a.dataset.nivel] || 0) - (ordem[b.dataset.nivel] || 0);
-                    if (criterio === 'disponivel') return (a.dataset.disponivel === 'Sim' ? 0 : 1) - (b.dataset.disponivel === 'Sim' ? 0 : 1);
-                });
-
-                todos.forEach(c => grid.appendChild(c));
-            }
-
-            document.querySelectorAll('.pag-btn').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    document.querySelectorAll('.pag-btn').forEach(b => b.classList.remove('pag-ativo'));
-                    if (!this.classList.contains('pag-proximo')) this.classList.add('pag-ativo');
-                });
-            });
-
-            ['filtro-area', 'filtro-nivel', 'filtro-estado'].forEach(id => {
-                document.getElementById(id).addEventListener('change', filtrar);
-            });
-            document.getElementById('filtro-nome').addEventListener('input', aplicarFiltros);
-            document.getElementById('check-disponivel').addEventListener('change', filtrar);
-            document.querySelectorAll('.check-modalidade').forEach(c => c.addEventListener('change', filtrar));
-        </script>
 
     </body>
 </html>
